@@ -81,7 +81,9 @@ numbers AS (
             '{Service}/v1/transactions?start=' || tx_version || '&limit=100',
             OBJECT_CONSTRUCT(
                 'Content-Type',
-                'application/json'
+                'application/json',
+                'User-Agent',
+                'Flipside_Crypto/0.1'
             ),
             PARSE_JSON('{}'),
             'Vault/prod/m1/devnet'
