@@ -34,7 +34,9 @@ SELECT
         '{Service}/v1/blocks/by_height/' || block_number || '?with_transactions=true',
         OBJECT_CONSTRUCT(
             'Content-Type',
-            'application/json'
+            'application/json',
+            'User-Agent',
+            'Flipside_Crypto/0.1'
         ),
         PARSE_JSON('{}'),
         'Vault/prod/m1/devnet'
